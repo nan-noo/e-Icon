@@ -20,7 +20,7 @@ multiple Activities & Fragments practice
 use intents(explicit, implicit), menu options   
 learn activity & fragment lifecycle   
 https://developer.android.com/courses/android-basics-kotlin/unit-3-pathway-1   
-https://developer.android.com/courses/android-basics-kotlin/unit-3-pathway-2   
+https://developer.android.com/courses/android-basics-kotlin/unit-3-pathway-2
 
 ##### 3. UnscrambleApp
 app architecture   
