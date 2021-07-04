@@ -11,7 +11,7 @@ an explanation about Kotlin
    
 ### AndroidStudioProjects
 ##### 1. TipTime
-computes tip - Layout practice  
+Layout practice - calculates tips  
 get user input & use recycler view(Linear/Grid Layout)   
 https://developer.android.com/courses/android-basics-kotlin/unit-2   
 
