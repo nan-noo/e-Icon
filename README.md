@@ -5,7 +5,7 @@ https://developer.android.com/courses/android-basics-kotlin/course
 
 ### .docx files (in Korean)
 1. androidstudio   
-an explanation about how to make apps
+an explanation about how to make android apps
 2. kotlin   
 an explanation about Kotlin
    
