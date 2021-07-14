@@ -29,5 +29,5 @@ viewBinding & dataBinding
 https://developer.android.com/courses/pathways/android-basics-kotlin-unit-3-pathway-3
 
 ##### 4. CupcakeApp
-1 + 2 + 3 
+1 + 2 + 3    
 https://developer.android.com/courses/pathways/android-basics-kotlin-unit-3-pathway-4
