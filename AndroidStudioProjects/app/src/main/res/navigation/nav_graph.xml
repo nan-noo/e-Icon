@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/startPageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.loginapp.HomePageFragment"
+        android:label="HomPageFragment"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/loginPageFragment"
+        android:name="com.example.loginapp.LoginPageFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginPageFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+        <action
+            android:id="@+id/action_loginPageFragment_to_startPageFragment"
+            app:destination="@id/startPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startPageFragment"
+        android:name="com.example.loginapp.StartPageFragment"
+        android:label="StartPageFragment"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_startPageFragment_to_signupPageFragment"
+            app:destination="@id/signupPageFragment" />
+        <action
+            android:id="@+id/action_startPageFragment_to_loginPageFragment"
+            app:destination="@id/loginPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupPageFragment"
+        android:name="com.example.loginapp.SignupPageFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signupPageFragment_to_startPageFragment"
+            app:destination="@id/startPageFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">LoginApp</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign up</string>
+    <string name="id">ID</string>
+    <string name="e_mail">e-mail</string>
+    <string name="password">password</string>
+    <string name="cancel">Cancel</string>
+    <string name="welcome_home">Welcome Home!!!</string>
+    <string name="your_id">your ID</string>
+    <string name="your_email_address">your email address</string>
+    <string name="your_password">your password</string>
+</resources>

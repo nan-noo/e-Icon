@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LoginPageFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.loginapp.model.LoginViewModel" />
+        <variable
+            name="loginFragment"
+            type="com.example.loginapp.LoginPageFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/side_margin">
+
+            <!-- Group the order details into a single ViewGroup and set focusable = true,
+                 so all fields will be read aloud together by the accessibility service -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/id_label"
+                    style="@style/Widget.Cupcake.TextView.OrderSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/id"
+                    android:textAllCaps="true"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/id"
+                    style="@style/Widget.Cupcake.TextView.OrderSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/order_summary_margin"
+                    android:autofillHints="@string/your_id"
+                    android:inputType="text"
+                    android:text="@={viewModel.userId}"
+                    tools:text="uni613"
+                    tools:ignore="LabelFor" />
+
+                <View
+                    android:id="@+id/divider1"
+                    style="@style/Widget.Cupcake.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/side_margin"
+                    android:layout_marginBottom="@dimen/side_margin" />
+
+                <TextView
+                    android:id="@+id/password_label"
+                    style="@style/Widget.Cupcake.TextView.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password" />
+
+                <EditText
+                    android:id="@+id/password"
+                    style="@style/Widget.Cupcake.TextView.OrderSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/order_summary_margin"
+                    android:autofillHints="@string/your_password"
+                    android:inputType="textPassword"
+                    android:text="@={viewModel.userPassword}"
+                    tools:text="1234"
+                    tools:ignore="LabelFor" />
+
+                <View
+                    android:id="@+id/divider3"
+                    style="@style/Widget.Cupcake.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/side_margin"
+                    android:layout_marginBottom="@dimen/margin_between_elements" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:text="@string/login"
+                android:onClick="@{() -> loginFragment.login()}"/>
+
+            <Button
+                android:id="@+id/cancel_btn"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:text="@string/cancel"
+                android:onClick="@{() -> loginFragment.cancel()}"/>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
