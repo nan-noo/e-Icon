@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -39,10 +40,19 @@ class SignupPageFragment: Fragment() {
     // 이미 가입한 유저면 Toast message "already signed up"
     // 가입하지 않은 유저면 data 서버에 전송
     fun signup(){
-        findNavController().navigate(R.id.action_signupPageFragment_to_startPageFragment)
+        sharedViewModel.registerUser()
+        if(sharedViewModel.flag.value == true){
+            Toast.makeText(context, sharedViewModel.errorMessage.value, Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_signupPageFragment_to_startPageFragment)
+        }
+        else{
+            Toast.makeText(context, sharedViewModel.errorMessage.value, Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     fun cancel(){
+        sharedViewModel.resetText()
         findNavController().navigate(R.id.action_signupPageFragment_to_startPageFragment)
     }
 }

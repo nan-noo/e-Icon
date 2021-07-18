@@ -2,12 +2,15 @@ package com.example.loginapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.loginapp.model.LoginViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
+    private val sharedViewModel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean { // 뒤로 버튼
+        sharedViewModel.resetText()
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

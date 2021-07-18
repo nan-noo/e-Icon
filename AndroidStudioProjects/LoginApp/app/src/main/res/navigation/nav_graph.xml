@@ -8,12 +8,12 @@
     <fragment
         android:id="@+id/homePageFragment"
         android:name="com.example.loginapp.HomePageFragment"
-        android:label="HomPageFragment"
+        android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/loginPageFragment"
         android:name="com.example.loginapp.LoginPageFragment"
-        android:label="fragment_start"
+        android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginPageFragment_to_homePageFragment"
@@ -25,7 +25,7 @@
     <fragment
         android:id="@+id/startPageFragment"
         android:name="com.example.loginapp.StartPageFragment"
-        android:label="StartPageFragment"
+        android:label="Start"
         tools:layout="@layout/fragment_start">
         <action
             android:id="@+id/action_startPageFragment_to_signupPageFragment"
@@ -37,7 +37,7 @@
     <fragment
         android:id="@+id/signupPageFragment"
         android:name="com.example.loginapp.SignupPageFragment"
-        android:label="fragment_signup"
+        android:label="Signup"
         tools:layout="@layout/fragment_signup">
         <action
             android:id="@+id/action_signupPageFragment_to_startPageFragment"

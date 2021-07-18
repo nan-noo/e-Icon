@@ -47,6 +47,7 @@
                     android:layout_marginTop="@dimen/order_summary_margin"
                     android:autofillHints="@string/your_id"
                     android:inputType="text"
+                    android:text="@={viewModel.userId}"
                     tools:text="uni613" />
 
                 <View
@@ -72,6 +73,7 @@
                     android:layout_marginTop="@dimen/order_summary_margin"
                     android:autofillHints="@string/your_email_address"
                     android:inputType="textEmailAddress"
+                    android:text="@={viewModel.userEmail}"
                     tools:text="uni613@naver.com" />
 
                 <View
@@ -97,6 +99,7 @@
                     android:layout_marginTop="@dimen/order_summary_margin"
                     android:autofillHints="@string/your_password"
                     android:inputType="textPassword"
+                    android:text="@={viewModel.userPassword}"
                     tools:text="1234" />
 
                 <View
