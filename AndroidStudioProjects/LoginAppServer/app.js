@@ -5,12 +5,14 @@ const mongoClient = require('mongodb').MongoClient
 const url = "mongodb://localhost:27017" // mongodb default port
 
 app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 mongoClient.connect(url, (err, db) => {
     if(err){
         console.log("Error while connecting mongo client")
     }
     else{
+        // create DB & table
         const myDb = db.db('myDb')
         const collection = myDb.collection('myTable')
 
@@ -22,7 +24,7 @@ mongoClient.connect(url, (err, db) => {
             }
             const query = {email: newUser.email}
             collection.findOne(query, (err, result) => {
-                if(result === null){ // not registered
+                if(!result){ // not registered
                     collection.insertOne(newUser, (err, result) => {
                         res.status(200).send()
                     })
@@ -40,15 +42,15 @@ mongoClient.connect(url, (err, db) => {
             }
             
             collection.findOne(query, (err, result) => {
-                if(result !== null){
+                if(!result){// wrong info
+                    res.status(404).send() // obj not found
+                }
+                else{ 
                     const objToSend = {
                         id: result.id,
                         email: result.email
                     }
                     res.status(200).send(JSON.stringify(objToSend))
-                }
-                else{ // wrong info
-                    res.status(404).send() // obj not found
                 }
             })
         })
