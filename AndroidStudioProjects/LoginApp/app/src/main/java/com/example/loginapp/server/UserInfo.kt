@@ -1,7 +1,11 @@
 package com.example.loginapp.server
 
+import com.google.gson.annotations.SerializedName
+
 data class UserInfo (
+    @SerializedName("id")
     val id: String,
-    val email: String,
-    val password: String
+
+    @SerializedName("email")
+    val email: String
     )

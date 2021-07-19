@@ -3,9 +3,7 @@ package com.example.loginapp.server
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 private const val BASE_URL = "http://10.0.2.2:3000" // server address
 
@@ -27,13 +25,10 @@ object RetrofitApi {
 
 interface RetrofitInterface {
     @FormUrlEncoded
-    @POST("login")
-    fun executeLogin(@Field("id")id: String?,
-                             @Field("password")password: String?): Call<UserInfo>
+    @POST("/login")
+    fun executeLogin(@FieldMap params: HashMap<String, String>): Call<UserInfo>
 
     @FormUrlEncoded
-    @POST("signup")
-    fun executeSignup(@Field("id")id: String?,
-                              @Field("email")email: String?,
-                              @Field("password")password: String?): Call<Void>
+    @POST("/signup")
+    fun executeSignup(@FieldMap params: HashMap<String, String>): Call<Void>
 }
