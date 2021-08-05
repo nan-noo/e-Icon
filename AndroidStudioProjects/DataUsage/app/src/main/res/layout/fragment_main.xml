@@ -16,13 +16,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <TextView
+            android:id="@+id/test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> mainFragment.getDataUsage()}"
+            android:text="@{@string/total_data_usage(viewModel.dataUsage)}"
+            app:layout_constraintBottom_toTopOf="@+id/map_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Total Data Usage 2434342" />
+
         <Button
             android:id="@+id/map_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="16dp"
             android:onClick="@{() -> mainFragment.goToMap()}"
-
             android:text="@string/google_maps"
             app:layout_constraintEnd_toStartOf="@id/guideline_button"
             app:layout_constraintStart_toStartOf="parent"

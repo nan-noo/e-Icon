@@ -1,6 +1,8 @@
 package com.example.datausage
 
+import android.net.TrafficStats
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,6 +33,22 @@ class MainFragment: Fragment() {
             viewModel = sharedViewModel
             mainFragment = this@MainFragment
         }
+
+        // TrafficStats
+
+        /*
+        TX and RX are abbreviations for Transmit and Receive, respectively.
+        Note that these metrics are referenced to the server being monitored;
+        Transmit FROM this server, and Receive TO this server.
+        */
+        // To get all Mobile Rx bytes
+        //Log.e("bytes recvd", "" + TrafficStats.getMobileRxBytes())
+        // To get Total Rx bytes
+        //Log.e("Total", "Bytes received: " + TrafficStats.getTotalRxBytes())
+    }
+
+    fun getDataUsage(){
+        sharedViewModel.getTotalDataUsage()
     }
 
     fun goToMap(){
