@@ -17,22 +17,36 @@
         android:layout_height="match_parent">
 
 
-        <TextView
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pie_chart"
+            android:layout_width="301dp"
+            android:layout_height="286dp"
+            android:layout_marginTop="68dp"
+            app:layout_constraintBottom_toTopOf="@+id/test"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
             android:id="@+id/test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> mainFragment.getDataUsage()}"
-            android:text="@{@string/total_data_usage(viewModel.dataUsage)}"
+            android:onClick="@{() -> mainFragment.onChartClick()}"
+            android:text="@{@string/total_data_usage(viewModel.totalDataUsage)}"
             app:layout_constraintBottom_toTopOf="@+id/map_button"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Total Data Usage 2434342" />
+            app:layout_constraintVertical_bias="0.693"
+            tools:text="Total Data Usage 2434.342KB" />
 
         <Button
             android:id="@+id/map_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="143dp"
+            android:layout_height="42dp"
             android:layout_marginStart="16dp"
             android:onClick="@{() -> mainFragment.goToMap()}"
             android:text="@string/google_maps"

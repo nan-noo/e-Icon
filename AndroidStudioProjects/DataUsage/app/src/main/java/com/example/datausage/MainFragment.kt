@@ -1,8 +1,6 @@
 package com.example.datausage
 
-import android.net.TrafficStats
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +9,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.datausage.databinding.FragmentMainBinding
 import com.example.datausage.model.MainViewModel
+import com.github.mikephil.charting.animation.Easing
+import com.github.mikephil.charting.data.PieData
+import com.github.mikephil.charting.data.PieDataSet
 
 class MainFragment: Fragment() {
     private val sharedViewModel: MainViewModel by activityViewModels()
@@ -33,22 +34,24 @@ class MainFragment: Fragment() {
             viewModel = sharedViewModel
             mainFragment = this@MainFragment
         }
-
-        // TrafficStats
-
-        /*
-        TX and RX are abbreviations for Transmit and Receive, respectively.
-        Note that these metrics are referenced to the server being monitored;
-        Transmit FROM this server, and Receive TO this server.
-        */
-        // To get all Mobile Rx bytes
-        //Log.e("bytes recvd", "" + TrafficStats.getMobileRxBytes())
-        // To get Total Rx bytes
-        //Log.e("Total", "Bytes received: " + TrafficStats.getTotalRxBytes())
+        onChartClick()
     }
 
-    fun getDataUsage(){
-        sharedViewModel.getTotalDataUsage()
+    fun onChartClick(){
+        sharedViewModel.setChartData()
+
+        val barChart = binding?.pieChart
+        barChart?.description?.isEnabled = false;
+
+        val dataSet = PieDataSet(sharedViewModel.entries, "")
+        dataSet.colors = sharedViewModel.colors
+
+        val data = PieData(dataSet)
+        data.setValueTextSize(11f)
+
+        barChart?.data = data
+        barChart?.animateY(1400, Easing.EaseInOutQuad)
+        barChart?.animate()
     }
 
     fun goToMap(){

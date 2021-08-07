@@ -2,5 +2,5 @@
     <string name="app_name">DataUsage</string>
     <string name="google_maps">Google Maps</string>
     <string name="guideline">guideline</string>
-    <string name="total_data_usage">Total Data Usage %s</string>
+    <string name="total_data_usage">Total Data Usage %sKB</string>
 </resources>
