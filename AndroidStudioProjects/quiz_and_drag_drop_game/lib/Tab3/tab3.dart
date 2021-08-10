@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class UserTab extends StatelessWidget{
+class Tab3 extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(

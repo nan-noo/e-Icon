@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import './CartoonTab/cartoon_tab.dart';
-import './GameTab/game_tab.dart';
-import './UserTab/user_tab.dart';
+import './Tab1/tab1.dart';
+import './Tab2/game_tab.dart';
+import './Tab3/tab3.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,9 +37,9 @@ class _MainPageState extends State<MainPage> {
         bottomNavigationBar: menu(),
         body: TabBarView(
           children: <Widget>[
-            CartoonTab(),
+            Tab1(),
             GameTab(),
-            UserTab()
+            Tab3()
           ],
         ),
       ),
@@ -57,13 +57,13 @@ Widget menu() {
         indicatorPadding: EdgeInsets.all(5.0),
         indicatorColor: Colors.indigo,
         tabs: [
-          Tab(text: "Cartoon",
+          Tab(text: "Tab1",
               icon: Icon(Icons.menu_book)
           ),
           Tab(text: "Game",
               icon: Icon(Icons.videogame_asset)
           ),
-          Tab(text: "User",
+          Tab(text: "Tab3",
               icon: Icon(Icons.person)
           ),
         ],

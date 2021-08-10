@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class RecyclingPView extends StatefulWidget {
-  const RecyclingPView({Key? key}) : super(key: key);
+class Title1View extends StatefulWidget {
+  const Title1View({Key? key}) : super(key: key);
 
   @override
-  _RecyclingPViewState createState() => _RecyclingPViewState();
+  _Title1ViewState createState() => _Title1ViewState();
 }
 
-class _RecyclingPViewState extends State<RecyclingPView> {
+class _Title1ViewState extends State<Title1View> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,7 +45,7 @@ class _RecyclingPViewState extends State<RecyclingPView> {
   }
 
   Widget _item({required String text,}){
-    return LongPressDraggable(
+    return Draggable(
         data: text,
         feedback: Text(text),
         child:  Container(

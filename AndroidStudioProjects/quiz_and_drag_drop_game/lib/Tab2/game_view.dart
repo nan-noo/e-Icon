@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import './Component/recyclingP.dart';
+import './Component/title1.dart';
 
-class RecyclingP extends StatelessWidget {
-  const RecyclingP({Key? key}) : super(key: key);
+class Title1 extends StatelessWidget {
+  const Title1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("RecyclingP"),
+          title: Text("Title1"),
           automaticallyImplyLeading: true,
           leading: IconButton(
             icon:Icon(Icons.arrow_back),
@@ -16,20 +16,20 @@ class RecyclingP extends StatelessWidget {
           ),
         ),
         body: Center(
-          child: RecyclingPView(),
+          child: Title1View(),
         )
     );
   }
 }
 
-class FoodWasteQuiz extends StatelessWidget {
-  const FoodWasteQuiz({Key? key}) : super(key: key);
+class Title2 extends StatelessWidget {
+  const Title2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Food Waste Quiz"),
+          title: Text("Title2"),
           automaticallyImplyLeading: true,
           leading: IconButton(
             icon:Icon(Icons.arrow_back),
@@ -43,14 +43,14 @@ class FoodWasteQuiz extends StatelessWidget {
   }
 }
 
-class PlasticQuiz extends StatelessWidget {
-  const PlasticQuiz({Key? key}) : super(key: key);
+class Title3 extends StatelessWidget {
+  const Title3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Plastic Quiz"),
+          title: Text("Title3"),
           automaticallyImplyLeading: true,
           leading: IconButton(
             icon:Icon(Icons.arrow_back),

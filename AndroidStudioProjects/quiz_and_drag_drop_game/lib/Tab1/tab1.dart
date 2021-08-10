@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CartoonTab extends StatelessWidget{
+class Tab1 extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(

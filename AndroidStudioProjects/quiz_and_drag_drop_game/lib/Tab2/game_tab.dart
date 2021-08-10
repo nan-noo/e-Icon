@@ -14,10 +14,10 @@ class GameTab extends StatelessWidget{
                 child: OutlinedButton(
                   onPressed: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => RecyclingP()),
+                      MaterialPageRoute(builder: (context) => Title1()),
                     );
                   },
-                  child: const Text("RecyclingP"),
+                  child: const Text("Title1"),
                 ),
               )
             ),
@@ -29,10 +29,10 @@ class GameTab extends StatelessWidget{
                   child: OutlinedButton(
                     onPressed: () {
                       Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => FoodWasteQuiz()),
+                        MaterialPageRoute(builder: (context) => Title2()),
                       );
                     },
-                    child: const Text("Food Waste Quiz"),
+                    child: const Text("Title2"),
                   ),
                 )
             ),
@@ -44,10 +44,10 @@ class GameTab extends StatelessWidget{
                   child: OutlinedButton(
                     onPressed: () {
                       Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => PlasticQuiz()),
+                        MaterialPageRoute(builder: (context) => Title3()),
                       );
                     },
-                    child: const Text("Plastic Quiz"),
+                    child: const Text("Title3"),
                   ),
                 )
             ),
